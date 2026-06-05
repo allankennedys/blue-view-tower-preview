@@ -177,3 +177,15 @@ preview.addEventListener('click', () => {
 modal.addEventListener('click', () => {
   modal.classList.remove('active');
 });
+
+//lazy mapa
+const map = document.querySelector('.map');
+
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    map.src = map.src; // força load só quando visível
+    observer.disconnect();
+  }
+});
+
+observer.observe(map);

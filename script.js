@@ -51,6 +51,7 @@ if (player) {
     player.innerHTML = `
       <video
         controls
+        muted
         autoplay
         playsinline
         preload="auto"
@@ -60,6 +61,8 @@ if (player) {
           src="/assets/altimetria-blueview-animacao02.webm"
           type="video/webm"
         >
+            <source src="/assets/altimetria-blueview-animacao02.mp4" type="video/mp4">
+
       </video>
     `;
     player.removeEventListener('click', handler);
@@ -107,9 +110,7 @@ function initCarousel(root) {
 }
 
 
-/* ============================================================
-   Formulário — validação básica de frontend (sem envio real)
-   ============================================================ */
+
 function initForm(form) {
   if (!form) return;
   const success = document.getElementById('formSuccess');

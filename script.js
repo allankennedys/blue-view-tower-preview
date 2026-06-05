@@ -232,3 +232,15 @@ function initForm(form) {
     input.addEventListener('input', () => setError(input, ''));
   });
 }
+
+
+const mapObserver = new IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting) {
+    setTimeout(() => {
+      map.src = map.dataset.src;
+    }, 300); // evita pico de carga
+    mapObserver.disconnect();
+  }
+}, {
+  rootMargin: '300px 0px'
+});

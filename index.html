@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/Ativo 1@4x.webp">
 <meta name="robots" content="noindex, nofollow">
+<link rel="preload" as="image" href="/assets/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp">
+
 <link rel="preload" as="style" href="/style.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,9 +33,14 @@
 
   <!-- ============ 01 · HERO ============ -->
   <section class="hero" id="hero">
-    <video class="hero-media" autoplay muted loop playsinline poster="assets/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
+    <img
+  src="/assets/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp"
+  class="hero-media"
+  fetchpriority="high"
+  loading="eager"
+  width="1920"
+  height="1080"
+/>
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">

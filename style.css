@@ -26,10 +26,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--font-body);
   color: var(--grafite);
   background: var(--branco);
@@ -443,9 +444,16 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius);
 }
 .map-points span { color: var(--azul-medio); font-weight: 600; }
+.location .split-text {
+  display: flex;
+  flex-direction: column;
+}
 .location .split-text p,
 .location .split-text .section-title {
   max-width: 100%;
+}
+.location .lifestyle-grid {
+  margin-top: auto;
 }
 
 .lifestyle-grid {
@@ -603,7 +611,40 @@ a { color: inherit; text-decoration: none; }
   color: var(--dourado);
 }
 .lazer-title { text-align: center; font-size: 1.4rem; }
-.lazer-sub { text-align: center; max-width: 56ch; margin: 0 auto 2.4rem; color: var(--cinza); }
+.lazer-sub { text-align: center; max-width: 56ch; margin: 0 auto 2rem; color: var(--cinza); }
+
+.lazer-list {
+  list-style: none;
+  margin: 0 auto 3rem;
+  padding: 0;
+  columns: 2;
+  column-gap: 48px;
+  max-width: 720px;
+}
+.lazer-list li {
+  break-inside: avoid;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: .97rem;
+  font-family: var(--font-body);
+  color: var(--cinza);
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.lazer-list li::before {
+  content: '·';
+  flex-shrink: 0;
+  color: var(--dourado);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 0;
+  position: relative;
+  top: 2px;
+}
+@media (max-width: 600px) {
+  .lazer-list { columns: 1; max-width: 100%; }
+}
 .lazer.section { background: var(--branco); }
 
 /* ---- Carousel ---- */
@@ -983,6 +1024,7 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
 }
 @media (max-width: 768px) {
   .site-footer { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+  .header-location { display: none; }
 }
 .footer-inner .brand { font-size: 1.3rem; display: inline-block; margin-bottom: .6rem; }
 .site-footer p { margin: .2rem 0; font-size: .88rem; }
@@ -1080,6 +1122,8 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
   }
   .hero-cta { flex-direction: column; margin-top: 1.8rem; }
   .hero-cta .btn { width: 100%; text-align: center; }
+  .hero-bullets { display: none; }
+  .hero-sub { color: var(--branco); }
   .section-title { max-width: 100%; font-size: clamp(1.4rem, 6vw, 1.9rem); }
   .eyebrow { display: block; text-align: center; }
   .split-text .section-title,
@@ -1095,6 +1139,29 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
 /* CTA fixo mobile */
 .mobile-cta-bar { display: none; }
 
+/* WhatsApp flutuante — base (desktop/tablet): canto inferior direito, sempre visível */
+.mobile-cta-wpp {
+  display: flex;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.mobile-cta-wpp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,.45);
+}
+
 @media (max-width: 768px) {
   .mobile-cta-bar {
     display: flex;
@@ -1107,6 +1174,7 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
     gap: 8px;
     padding: 10px 16px;
     padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    padding-right: 72px; /* reserva espaço para o ícone do zap */
     background: rgba(10,31,46,.97);
     backdrop-filter: blur(6px);
     border-top: 1px solid rgba(255,255,255,.08);
@@ -1121,9 +1189,6 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
   .mobile-cta-bar.hidden .mobile-cta-btn {
     opacity: 0;
     pointer-events: none;
-  }
-  .mobile-cta-bar.hidden .mobile-cta-wpp {
-    pointer-events: auto;
   }
   .mobile-cta-btn {
     flex: 1;
@@ -1143,18 +1208,19 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
     background: var(--dourado);
     color: var(--azul-escuro);
   }
+  /* No mobile, ícone alinhado à direita da barra */
   .mobile-cta-wpp {
-    flex: 0 0 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    right: 16px;
     width: 48px;
     height: 48px;
-    border-radius: var(--radius);
     background: rgba(10,31,46,.85);
     border: 1px solid rgba(255,255,255,.12);
-    color: var(--branco);
-    transition: background .2s;
+    box-shadow: none;
+  }
+  .mobile-cta-wpp:hover {
+    transform: none;
+    box-shadow: none;
   }
   .mobile-cta-wpp:active { background: rgba(10,31,46,.97); }
 }

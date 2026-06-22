@@ -13,19 +13,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Esconder CTA fixo mobile ao sobrepor CTA da página ---------- */
+  /* ---------- CTA fixo mobile: aparece a partir da 4ª seção, some quando algum btn estiver visível ---------- */
   const mobileCTABar = document.querySelector('.mobile-cta-bar');
-  const pageAnchors  = [...document.querySelectorAll('.page-cta-anchor')];
-  if (mobileCTABar && pageAnchors.length) {
-    const checkOverlap = () => {
-      const overlaps = pageAnchors.some(el => {
-        const r = el.getBoundingClientRect();
-        return r.top < window.innerHeight && r.bottom > 0;
-      });
-      mobileCTABar.classList.toggle('hidden', overlaps);
-    };
-    window.addEventListener('scroll', checkOverlap, { passive: true });
-    checkOverlap();
+  if (mobileCTABar) {
+    let visibleBtns = 0;
+    let reachedFourth = false;
+
+    const update = () => mobileCTABar.classList.toggle('hidden', !reachedFourth || visibleBtns > 0);
+
+    const fourthSection = document.querySelector('.location');
+    if (fourthSection) {
+      new IntersectionObserver(([e]) => {
+        reachedFourth = e.isIntersecting || e.boundingClientRect.top < 0;
+        update();
+      }, { threshold: 0 }).observe(fourthSection);
+    }
+
+    const btnObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { visibleBtns = Math.max(0, visibleBtns + (e.isIntersecting ? 1 : -1)); });
+      update();
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.btn').forEach(el => btnObserver.observe(el));
   }
 
   await yieldToMain();

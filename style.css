@@ -541,22 +541,29 @@ a { color: inherit; text-decoration: none; }
 /* ============================================================
    06 · STATUS + LAZER
    ============================================================ */
+.status.section {
+  min-height: 0;
+  height: 100vh;
+  max-height: 100svh;
+  overflow: hidden;
+}
+.status .section-header { margin-bottom: clamp(2rem, 5vh, 4rem); }
 .progress-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin: 50px 0 20px;
+  gap: clamp(16px, 3vw, 40px);
+  margin: 0;
 }
 .progress-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: clamp(.5rem, 1.5vh, 1.2rem);
 }
 .donut-wrap {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: clamp(100px, 16vw, 180px);
+  height: clamp(100px, 16vw, 180px);
 }
 .donut {
   width: 100%;
@@ -584,7 +591,7 @@ a { color: inherit; text-decoration: none; }
   transform: translate(-50%, -50%);
   font-family: var(--font-title);
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   color: var(--branco);
 }
 .progress-label {
@@ -974,6 +981,9 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
   text-align: center;
   border-top: 1px solid rgba(201,168,76,.2);
 }
+@media (max-width: 768px) {
+  .site-footer { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+}
 .footer-inner .brand { font-size: 1.3rem; display: inline-block; margin-bottom: .6rem; }
 .site-footer p { margin: .2rem 0; font-size: .88rem; }
 .footer-url { color: var(--dourado); }
@@ -1147,7 +1157,6 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
     transition: background .2s;
   }
   .mobile-cta-wpp:active { background: rgba(10,31,46,.97); }
-  body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
 }
 
 /* Ultrawide */

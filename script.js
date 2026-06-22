@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- Esconder CTA fixo mobile ao sobrepor CTA da página ---------- */
+  const mobileCTABar = document.querySelector('.mobile-cta-bar');
+  const pageAnchors  = [...document.querySelectorAll('.page-cta-anchor')];
+  if (mobileCTABar && pageAnchors.length) {
+    const checkOverlap = () => {
+      const overlaps = pageAnchors.some(el => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight && r.bottom > 0;
+      });
+      mobileCTABar.classList.toggle('hidden', overlaps);
+    };
+    window.addEventListener('scroll', checkOverlap, { passive: true });
+    checkOverlap();
+  }
+
   await yieldToMain();
 
   /* ---------- Reveal on scroll + counters ---------- */
@@ -37,8 +52,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   await yieldToMain();
 
+  /* ---------- Dropdown de idioma (mobile) ---------- */
+  const langSwitch = document.querySelector('.lang-switch');
+  const langToggle = langSwitch?.querySelector('.lang-toggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = langSwitch.classList.toggle('open');
+      langToggle.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', () => {
+      langSwitch.classList.remove('open');
+      langToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ---------- Gráficos donut de progresso ---------- */
+  initDonutCharts();
+
+  /* ---------- Carrossel de plantas ---------- */
+  const typoTrack = document.querySelector('.typo-track');
+  if (typoTrack) {
+    const scrollAmt = () => typoTrack.clientWidth + 24;
+    document.querySelector('.typo-prev')?.addEventListener('click', () =>
+      typoTrack.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }));
+    document.querySelector('.typo-next')?.addEventListener('click', () =>
+      typoTrack.scrollBy({ left: scrollAmt(), behavior: 'smooth' }));
+  }
+
   /* ---------- Carousel de lazer ---------- */
   initCarousel(document.getElementById('lazerCarousel'));
+
+  /* ---------- Carousel de portfólio ---------- */
+  initPortfolioCarousel();
 
   await yieldToMain();
 
@@ -107,6 +153,27 @@ function animateCounter(el) {
 
 
 /* ============================================================
+   Gráficos donut
+   ============================================================ */
+function initDonutCharts() {
+  const CIRC = 251.3;
+  const fills = document.querySelectorAll('.donut-fill');
+  if (!fills.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const pct = parseFloat(el.dataset.pct) || 0;
+      el.style.strokeDashoffset = CIRC * (1 - pct / 100);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+
+  fills.forEach(el => observer.observe(el));
+}
+
+/* ============================================================
    Carousel reutilizável
    ============================================================ */
 function initCarousel(root) {
@@ -142,12 +209,12 @@ function initCarousel(root) {
   const loop = () => {
     if (!running) return;
     go(index + 1);
-    timer = setTimeout(loop, 5000);
+    timer = setTimeout(loop, 2000);
   };
 
   const restart = () => {
     clearTimeout(timer);
-    timer = setTimeout(loop, 5000);
+    timer = setTimeout(loop, 2000);
   };
 
   const stop = () => {
@@ -166,8 +233,9 @@ function initCarousel(root) {
 
   io.observe(root);
 
-  root.querySelector('.prev').addEventListener('click', () => go(index - 1));
-  root.querySelector('.next').addEventListener('click', () => go(index + 1));
+  const btnScope = root.querySelector('.prev') ? root : (root.parentElement || root);
+  btnScope.querySelector('.prev').addEventListener('click', () => go(index - 1));
+  btnScope.querySelector('.next').addEventListener('click', () => go(index + 1));
 
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', () => {
@@ -179,6 +247,43 @@ function initCarousel(root) {
 }
 
 
+
+/* ============================================================
+   Carousel de portfólio (3-per-view no desktop, 1-per-view no mobile)
+   ============================================================ */
+function initPortfolioCarousel() {
+  const root = document.getElementById('portfolioCarousel');
+  if (!root) return;
+
+  const isMobile = window.innerWidth <= 640;
+  if (isMobile) { initCarousel(root); return; }
+
+  const track  = root.querySelector('.carousel-track');
+  const slides = [...track.children];
+  const wrap   = root.parentElement;
+  const perView = 3;
+  const maxIndex = Math.max(0, slides.length - perView);
+  let index = 0;
+
+  const prevBtn = wrap.querySelector('.prev');
+  const nextBtn = wrap.querySelector('.next');
+
+  const render = () => {
+    track.style.transform = `translateX(-${index * (100 / perView)}%)`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === maxIndex;
+  };
+
+  const go = (i) => {
+    index = Math.max(0, Math.min(i, maxIndex));
+    render();
+  };
+
+  prevBtn.addEventListener('click', () => go(index - 1));
+  nextBtn.addEventListener('click', () => go(index + 1));
+
+  render();
+}
 
 /* ============================================================
    Formulário

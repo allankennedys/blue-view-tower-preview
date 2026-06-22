@@ -33,11 +33,20 @@
     <div class="container header-inner">
       <a href="#hero" class="brand"><img src="assets/Ativo 1@4x.webp" style="width: 120px;" loading="eager"
   fetchpriority="high"></a>
-      <nav class="lang-switch" aria-label="Seletor de idioma">
-        <a href="#" class="lang active">PT</a>
-        <a href="/en/" class="lang">EN</a>
-        <a href="/es/" class="lang">ES</a>
-      </nav>
+      <span class="header-location">BC · Praia Brava</span>
+      <div class="header-right">
+        <nav class="lang-switch" aria-label="Seletor de idioma">
+          <button class="lang-toggle" aria-expanded="false" aria-haspopup="true">
+            PT
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 3l4 4 4-4"/></svg>
+          </button>
+          <div class="lang-dropdown">
+            <a href="#" class="lang active">PT</a>
+            <a href="/en/" class="lang">EN</a>
+            <a href="/es/" class="lang">ES</a>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -64,11 +73,9 @@
       </ul>
 
       <div class="hero-cta">
-        <a href="#contato" class="btn btn-primary">Receber Apresentação Exclusiva</a>
-        <a href="https://wa.me/5547991356151" class="btn btn-outline">Falar com Especialista no WhatsApp</a>
+        <a href="#contato" class="btn btn-primary">Receber book completo do empreendimento</a>
+        <a href="https://wa.me/5547991356151" class="btn btn-outline">Falar com Especialista agora</a>
       </div>
-
-      <p class="hero-micro">Apenas 31 unidades · Fase de lançamento ativa</p>
     </div>
 
     <span class="scroll-hint" aria-hidden="true"></span>
@@ -89,6 +96,17 @@
         <span class="stat-num" data-count="4">0</span>
         <span class="stat-label">Andares de lazer<br><small>Experiência completa</small></span>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · URGÊNCIA ============ -->
+  <section class="urgency section">
+    <div class="container urgency-inner">
+      <h2 class="section-title">Apenas 31 unidades - fase de lançamento ativa. As melhores saem primeiro.</h2>
+      <p class="urgency-lead">Oportunidades desta envergadura não se repetem, e as 31 unidades não esperam.</p>
+      <p class="urgency-values">Valores a partir de <strong>R$ 21.733.000</strong> · tabela zero para investidores · condições especiais nesta fase.</p>
+      <a href="https://wa.me/5547991356151" class="btn btn-primary page-cta-anchor">Garantir minha unidade - WhatsApp</a>
+      <p class="urgency-micro">Conversa discreta · sem compromisso · resposta em até 5 minutos.</p>
     </div>
   </section>
 
@@ -115,10 +133,12 @@
         <span class="eyebrow">Localização & Lifestyle</span>
         <h2 class="section-title">O endereço que define quem você é, antes mesmo de abrir a porta.</h2>
         <p>Av. Atlântica 5.320 · Barra Sul. 19m de testada frente mar, a poucos passos da Marina e do Unipraias.</p>
-        <p>Balneário Camboriú registrou <strong>+127% de valorização imobiliária</strong> na última década. Escolher este endereço é, acima de tudo, inteligência financeira.</p>
         <a href="https://wa.me/5547991356151" class="btn btn-primary">Quero saber mais - WhatsApp</a>
 
-        <img class="lifestyle-img" src="assets/23_113_25_SUITE_MASTER_TIPO_R01.webp"  loading="lazy" alt="Varanda com vista para o mar">
+        <div class="lifestyle-grid">
+          <img src="assets/23_113_25_SUITE_MASTER_TIPO_R01.webp" loading="lazy" alt="Suíte master">
+          <img src="assets/23_113_26_BANHEIRO_MASTER_TIPO_FINAL (1).webp" loading="lazy" alt="Banheiro master">
+        </div>
       </div>
     </div>
   </section>
@@ -186,37 +206,80 @@
           <h3>Vista & Localização</h3>
           <p>19m frente mar · Av. Atlântica · Barra Sul.</p>
         </article>
+        <article class="feature-card">
+          <h3>Fachada Única</h3>
+          <p>Vidro curvo azul · espelhamento exclusivo · ícone arquitetônico de BC.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Garagem</h3>
+          <p>Até 6 vagas · Tipo A e B com 3 vagas · Cobertura com 6 vagas.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Cobertura Duplex</h3>
+          <p>549 m² · piscina privativa · spa privativo · exclusividade máxima.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Altura</h3>
+          <p>172m · 52 pavimentos · a torre mais alta da Barra Sul · vista 360° para o mar e a cidade.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Sustentabilidade</h3>
+          <p>Painéis solares · reaproveitamento de água · iluminação LED.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Entrega</h3>
+          <p>Dezembro 2028 · obra em andamento desde Fev/2024 · fase de lançamento ativa.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ 06 · STATUS DA OBRA + LAZER ============ -->
+  <!-- ============ 06 · STATUS DA OBRA ============ -->
   <section class="status section section-dark" id="status">
     <div class="container">
-      <span class="eyebrow center">Status da obra</span>
-      <h2 class="section-title center">Em construção - cada etapa é um passo mais próximo da vida que você merece.</h2>
-
-      <div class="timeline">
-        <div class="timeline-step done">
-          <span class="dot"></span>
-          <strong>Lançamento</strong>
-          <span>Fev/2024</span>
+      <div class="section-header center">
+        <h2 class="section-title">Estágio da obra</h2>
+      </div>
+      <div class="progress-grid">
+        <div class="progress-item">
+          <div class="donut-wrap">
+            <svg viewBox="0 0 100 100" class="donut">
+              <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="100"/>
+            </svg>
+            <span class="donut-pct">100%</span>
+          </div>
+          <span class="progress-label">Fundamento</span>
         </div>
-        <div class="timeline-bar"><span class="timeline-fill"></span></div>
-        <div class="timeline-step current">
-          <span class="dot"></span>
-          <strong>Em construção</strong>
-          <span>Atual</span>
+        <div class="progress-item">
+          <div class="donut-wrap">
+            <svg viewBox="0 0 100 100" class="donut">
+              <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="40"/>
+            </svg>
+            <span class="donut-pct">40%</span>
+          </div>
+          <span class="progress-label">Estrutura</span>
         </div>
-        <div class="timeline-bar"></div>
-        <div class="timeline-step">
-          <span class="dot"></span>
-          <strong>Entrega</strong>
-          <span>Dez/2028</span>
+        <div class="progress-item">
+          <div class="donut-wrap">
+            <svg viewBox="0 0 100 100" class="donut">
+              <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="0"/>
+            </svg>
+            <span class="donut-pct">0%</span>
+          </div>
+          <span class="progress-label">Acabamento</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3 class="lazer-title">Quatro andares inteiros dedicados à sua experiência</h3>
+  <!-- ============ 06B · LAZER ============ -->
+  <section class="lazer section" id="lazer">
+    <div class="container">
+      <span class="eyebrow center">Lazer</span>
+      <h2 class="section-title center">Quatro andares inteiros dedicados à sua experiência</h2>
       <p class="lazer-sub">Piscina com vista mar, spa, academia, salão de festas, kids e muito mais nos 8º, 22º, 38º e 39º pavimentos.</p>
 
       <div class="carousel" id="lazerCarousel">
@@ -238,51 +301,49 @@
   <!-- ============ 07 · TIPOLOGIAS & PLANTAS ============ -->
   <section class="typologies section" id="plantas">
     <div class="container">
-      <span class="eyebrow center">Tipologias & Plantas</span>
-      <h2 class="section-title center">Escolha o lar à altura do seu padrão de vida</h2>
+      <div class="section-header center">
+        <h2 class="section-title">Tipologias & Plantas</h2>
+      </div>
+      <div class="typo-carousel">
+        <div class="typo-track typo-grid">
 
-      <div class="typo-grid">
-        <article class="typo-card open">
-          <span class="typo-tag">Tipo A · 13 unid.</span>
-          <h3>324 m²</h3>
-          <ul>
-            <li>8º ao 20º pavimento</li>
-            <li>6 suítes · 3 vagas</li>
-            <li>A partir de R$ 21.733.000</li>
-          </ul>
-         <img
-  src="assets/PB_TIPO_A_OPCAO_02.webp"
-  alt="Planta Tipo A"
-  class="plant-preview"
-   loading="lazy"
->
-        </article>
+          <article class="typo-card open">
+            <span class="typo-tag">Tipo A · 13 unid.</span>
+            <h3>324 m²</h3>
+            <ul>
+              <li>8º ao 20º pavimento</li>
+              <li>6 suítes · 3 vagas</li>
+              <li>A partir de R$ 21.733.000</li>
+            </ul>
+            <img src="assets/PB_TIPO_A_OPCAO_02.webp" alt="Planta Tipo A" class="plant-preview" loading="lazy">
+          </article>
 
-        <article class="typo-card locked">
-          <span class="typo-tag">Tipo B · 14 unid.</span>
-          <h3>275 m²<small>frente mar</small></h3>
-          <ul>
-            <li>23º ao 37º pavimento</li>
-            <li>6 suítes · 3 vagas</li>
-          </ul>
-          <div class="lock-overlay">
-            <span class="lock-icon" aria-hidden="true"></span>
-            <p>Planta disponível por WhatsApp</p>
-          </div>
-        </article>
+          <article class="typo-card open">
+            <span class="typo-tag">Tipo B · 14 unid.</span>
+            <h3>275 m²<small>frente mar</small></h3>
+            <ul>
+              <li>23º ao 37º pavimento</li>
+              <li>6 suítes · 3 vagas</li>
+            </ul>
+            <img src="assets/23_113_24_LIVING_TIPO_FINAL.webp" alt="Planta Tipo B" class="plant-preview" loading="lazy">
+          </article>
 
-        <article class="typo-card locked">
-          <span class="typo-tag">Duplex · cobertura</span>
-          <h3>549 m²<small>piscina privativa</small></h3>
-          <ul>
-            <li>Spa privativo</li>
-            <li>Exclusividade máxima</li>
-          </ul>
-          <div class="lock-overlay">
-            <span class="lock-icon" aria-hidden="true"></span>
-            <p>Planta disponível por WhatsApp</p>
-          </div>
-        </article>
+          <article class="typo-card locked">
+            <span class="typo-tag">Duplex · cobertura</span>
+            <h3>549 m²<small>piscina privativa</small></h3>
+            <ul>
+              <li>Spa privativo</li>
+              <li>Exclusividade máxima</li>
+            </ul>
+            <a href="https://wa.me/5547991356151" class="lock-overlay" aria-label="Ver planta pelo WhatsApp">
+              <span class="lock-icon" aria-hidden="true"></span>
+              <p>Acessar planta pelo WhatsApp</p>
+            </a>
+          </article>
+
+        </div>
+        <button class="carousel-btn prev typo-prev" aria-label="Anterior">&#8249;</button>
+        <button class="carousel-btn next typo-next" aria-label="Próximo">&#8250;</button>
       </div>
 
       <a href="https://wa.me/5547991356151" class="btn btn-primary center-btn">Receber todas as plantas por WhatsApp →</a>
@@ -307,14 +368,33 @@
   <section class="builder section" id="fg">
     <div class="container">
       <span class="eyebrow center">FG Empreendimentos</span>
-      <h2 class="section-title center">Quem constrói o Blue View Tower já provou que sabe construir o excepcional.</h2>
+      <h2 class="section-title center">Quem constrói este empreendimento já provou que sabe construir o excepcional.</h2>
       <p class="center builder-lead">Fundada em 2003 · pioneira em alto padrão em BC · responsável pela One Tower, o maior arranha-céu residencial da América Latina.</p>
 
-      <div class="portfolio">
-        <figure><img src="assets/one-tower-1.webp" alt="One Tower" loading="lazy"><figcaption>One Tower</figcaption></figure>
-        <figure><img src="assets/Titanium-Tower-20.webp" alt="Titanium Tower"  loading="lazy"><figcaption>Titanium Tower</figcaption></figure>
-        <figure><img src="assets/infinity.webp" style="  object-position: top
-" alt="Infinity Coast"  loading="lazy"><figcaption>Infinity Coast</figcaption></figure>
+      <div class="portfolio-carousel-wrap">
+        <button class="carousel-btn prev portfolio-prev" aria-label="Anterior">&#8249;</button>
+        <button class="carousel-btn next portfolio-next" aria-label="Próximo">&#8250;</button>
+        <div class="carousel" id="portfolioCarousel">
+          <div class="carousel-track">
+            <figure class="portfolio-slide">
+              <img src="assets/one-tower-1.webp" alt="One Tower" loading="lazy">
+              <figcaption>One Tower</figcaption>
+            </figure>
+            <figure class="portfolio-slide">
+              <img src="assets/Titanium-Tower-20.webp" alt="Titanium Tower" loading="lazy">
+              <figcaption>Titanium Tower</figcaption>
+            </figure>
+            <figure class="portfolio-slide">
+              <img src="assets/infinity.webp" alt="Infinity Coast" loading="lazy" style="object-position: top">
+              <figcaption>Infinity Coast</figcaption>
+            </figure>
+            <figure class="portfolio-slide">
+              <img src="assets/one-tower-1.webp" alt="One Tower" loading="lazy">
+              <figcaption>One Tower</figcaption>
+            </figure>
+          </div>
+          <div class="carousel-dots" aria-hidden="true"></div>
+        </div>
       </div>
 
       <div class="builder-stats">
@@ -330,7 +410,7 @@
   <section class="investor section section-dark" id="investidor">
     <div class="container">
       <span class="eyebrow center">Investimento</span>
-      <h2 class="section-title center">BC não é só o lugar mais desejado para viver, é um dos mais inteligentes para investir.</h2>
+      <h2 class="section-title center">BC e Praia Brava, os lugares mais desejados para viver e um dos mais inteligentes para investir.</h2>
 
       <div class="investor-grid">
         <article class="investor-card">
@@ -343,26 +423,15 @@
         </article>
         <article class="investor-card">
           <h3>Renda</h3>
-          <p>Aluguel premium.<br>Alta demanda em temporada.</p>
+          <p>Aluguel premium.<br>Alta demanda em temporada.<br>Valorização acima da média.</p>
         </article>
       </div>
 
-      <p class="center investor-formula">Escassez + frente mar + FG = os 3 ingredientes do investimento premium.</p>
-      <a href="#contato" class="btn btn-primary center-btn">Solicitar estudo de valorização gratuito e sem compromisso</a>
+      <a href="#contato" class="btn btn-primary center-btn page-cta-anchor">Garantir minha unidade</a>
       <p class="footnote">*Dados FipeZap/CRECI - caráter informativo.</p>
     </div>
   </section>
 
-  <!-- ============ 11 · URGÊNCIA ============ -->
-  <section class="urgency section">
-    <div class="container urgency-inner">
-      <h2 class="section-title">Apenas 31 unidades - fase de lançamento ativa. As melhores saem primeiro.</h2>
-      <p class="urgency-lead">Oportunidades desta envergadura não se repetem, e as 31 unidades não esperam.</p>
-      <p class="urgency-values">Valores a partir de <strong>R$ 21.733.000</strong> · tabela zero para investidores · condições especiais nesta fase.</p>
-      <a href="https://wa.me/5547991356151" class="btn btn-primary">Garantir minha unidade - WhatsApp</a>
-      <p class="urgency-micro">Conversa discreta · sem compromisso · resposta em até 5 minutos.</p>
-    </div>
-  </section>
 
   <!-- ============ 12 · CTA FINAL + FORMULÁRIO ============ -->
   <section class="final section section-dark" id="contato">
@@ -421,12 +490,6 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flutuante -->
-  <a href="https://wa.me/5547991356151" class="whatsapp-float" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
-      <path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.1 1 1.1-4-.3-.4C5.6 18.6 5 16.8 5 15 5 9.5 9.9 5 16 5s11 4.5 11 10-4.9 10-11 10zm6.1-7.5c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.8-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/>
-    </svg>
-  </a>
 
   <div class="plant-modal" id="plantModal">
   <span class="close-modal">&times;</span>
@@ -438,6 +501,16 @@
      loading="lazy"
   >
 </div>
+  <!-- CTA fixo mobile -->
+  <div class="mobile-cta-bar" aria-hidden="true">
+    <a href="#contato" class="mobile-cta-btn mobile-cta-secondary">Garantir minha unidade</a>
+    <a href="https://wa.me/5547991356151" class="mobile-cta-wpp" aria-label="Falar no WhatsApp">
+      <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" fill="currentColor">
+        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.1 1 1.1-4-.3-.4C5.6 18.6 5 16.8 5 15 5 9.5 9.9 5 16 5s11 4.5 11 10-4.9 10-11 10zm6.1-7.5c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.8-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/>
+      </svg>
+    </a>
+  </div>
+
   <script src="script.js" defer></script>
 </body>
 </html>

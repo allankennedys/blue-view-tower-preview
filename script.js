@@ -359,29 +359,61 @@ const mapObserver = new IntersectionObserver(([entry]) => {
   rootMargin: '300px 0px'
 });
 
-// gallery lightbox
+// gallery carousel — 1 s interval
 (function () {
-  const lightbox = document.getElementById('galleryLightbox');
-  const lbImg   = document.getElementById('galleryLightboxImg');
-  const lbClose = document.getElementById('galleryClose');
-  if (!lightbox) return;
+  const root = document.getElementById('galleryCarousel');
+  if (!root) return;
 
-  document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
+  const track    = root.querySelector('.carousel-track');
+  const slides   = [...track.children];
+  const dotsWrap = root.querySelector('.carousel-dots');
+
+  let index   = 0;
+  let timer   = null;
+  let running = true;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.addEventListener('click', () => go(i));
+    dotsWrap.appendChild(dot);
   });
 
-  function close() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-    lbImg.src = '';
-  }
+  const dots = [...dotsWrap.children];
 
-  lbClose.addEventListener('click', close);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  const render = () => {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  };
+
+  const go = (i) => {
+    index = (i + slides.length) % slides.length;
+    render();
+    restart();
+  };
+
+  const loop = () => {
+    if (!running) return;
+    go(index + 1);
+    timer = setTimeout(loop, 1000);
+  };
+
+  const restart = () => {
+    clearTimeout(timer);
+    timer = setTimeout(loop, 1000);
+  };
+
+  const stop = () => { clearTimeout(timer); timer = null; };
+
+  new IntersectionObserver(([e]) => {
+    running = e.isIntersecting;
+    running ? restart() : stop();
+  }, { threshold: 0.2 }).observe(root);
+
+  root.querySelector('.prev').addEventListener('click', () => go(index - 1));
+  root.querySelector('.next').addEventListener('click', () => go(index + 1));
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', () => { if (running) restart(); });
+
+  render();
+  restart();
 }());

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/Ativo 1@4x.webp">
   <meta name="robots" content="index, follow">
-  <link rel="preload" as="image" href="/assets/obra.jpg">
+  <link rel="preload" as="image" href="/assets/obra.webp" type="image/webp">
   <link rel="preload" as="style" href="/style.css">
   <link rel="stylesheet" href="/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF5QJES6KQ"></script>
@@ -47,7 +47,7 @@
   <!-- ============ 01 · HERO ============ -->
   <section class="hero" id="hero">
     <img
-      src="/assets/obra.jpg"
+      src="/assets/obra.webp"
       class="hero-media"
       fetchpriority="high"
       loading="eager"
@@ -242,6 +242,10 @@
             <span class="donut-pct">100%</span>
           </div>
           <span class="progress-label">Foundation</span>
+          <div class="progress-dates">
+            <span><em>Start:</em> Feb/2024</span>
+            <span><em>Done:</em> Jun/2024</span>
+          </div>
         </div>
         <div class="progress-item">
           <div class="donut-wrap">
@@ -252,6 +256,10 @@
             <span class="donut-pct">40%</span>
           </div>
           <span class="progress-label">Structure</span>
+          <div class="progress-dates">
+            <span><em>Start:</em> Jul/2024</span>
+            <span><em>Done:</em> Jun/2026</span>
+          </div>
         </div>
         <div class="progress-item">
           <div class="donut-wrap">
@@ -262,6 +270,10 @@
             <span class="donut-pct">0%</span>
           </div>
           <span class="progress-label">Finishing</span>
+          <div class="progress-dates">
+            <span><em>Start:</em> Jul/2026</span>
+            <span><em>Done:</em> Dec/2028</span>
+          </div>
         </div>
       </div>
     </div>
@@ -331,7 +343,7 @@
               <li>23rd to 37th floor</li>
               <li>6 suites · 3 parking spots</li>
             </ul>
-            <img src="../assets/PB_TIPO_B_OPCAO_01.jpg" alt="Type B Floor Plan" class="plant-preview" loading="lazy">
+            <img src="../assets/PB_TIPO_B_OPCAO_01.webp" alt="Type B Floor Plan" class="plant-preview" loading="lazy">
           </article>
 
           <article class="typo-card locked">
@@ -355,6 +367,60 @@
       <a href="https://wa.me/5547991356151" class="btn btn-primary center-btn">Receive all floor plans via WhatsApp →</a>
     </div>
   </section>
+
+  <!-- ============ 09.5 · GALLERY ============ -->
+  <section class="gallery section" id="galeria">
+    <div class="container">
+      <div class="section-header center">
+        <span class="eyebrow">Gallery</span>
+        <h2 class="section-title center">See every detail of Blue View Tower</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item--tall">
+          <img src="../assets/imagens/23_113_01_FACHADA_FINAL%20(1).webp" alt="Facade" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item gallery-item--tall">
+          <img src="../assets/imagens/23_113_03_FACHADA_NOTURNA_FINAL.webp" alt="Night Facade" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp" alt="Night Base" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_34_FACHADA_DIURNA_INSERCAO_FINAL_V2.webp" alt="Daytime Facade" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item hide-mobile">
+          <img src="../assets/imagens/23_113_04_EMBASAMENTO_ESQUINA_FINAL%20(1).webp" alt="Corner Base" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item gallery-item--wide">
+          <img src="../assets/imagens/23_113_05_FOTOMONTAGEM_FINAL.webp" alt="Photomontage" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_23_HALL_ENTRADA_TERREO_FINAL.webp" alt="Lobby" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_15_PISCINA_COBERTA_FINAL.webp" alt="Covered Pool" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_11_FESTAS_FINAL.webp" alt="Party Hall" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_16_ACADEMIA_FINAL.webp" alt="Gym" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_21_JOGOS_R00.webp" alt="Game Room" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery-item">
+          <img src="../assets/imagens/23_113_32_FACHADA_ADICIONAL_FINAL.webp" alt="Additional Facade" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+    <button class="gallery-lightbox__close" id="galleryClose" aria-label="Close">&times;</button>
+    <img src="" alt="" id="galleryLightboxImg">
+  </div>
 
   <!-- ============ 10 · IMMERSIVE VIDEO ============ -->
   <section class="video section section-dark" id="video">
@@ -394,8 +460,8 @@
               <figcaption>Infinity Coast</figcaption>
             </figure>
             <figure class="portfolio-slide">
-              <img src="../assets/one-tower-1.webp" alt="One Tower" loading="lazy">
-              <figcaption>One Tower</figcaption>
+              <img src="../assets/blue-coast.webp" alt="Blue Coast Tower" loading="lazy" decoding="async">
+              <figcaption>Blue Coast Tower</figcaption>
             </figure>
           </div>
           <div class="carousel-dots" aria-hidden="true"></div>

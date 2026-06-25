@@ -358,3 +358,30 @@ const mapObserver = new IntersectionObserver(([entry]) => {
 }, {
   rootMargin: '300px 0px'
 });
+
+// gallery lightbox
+(function () {
+  const lightbox = document.getElementById('galleryLightbox');
+  const lbImg   = document.getElementById('galleryLightboxImg');
+  const lbClose = document.getElementById('galleryClose');
+  if (!lightbox) return;
+
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function close() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  lbClose.addEventListener('click', close);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}());

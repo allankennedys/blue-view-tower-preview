@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ALTERAR: Título que aparece na aba do navegador e no Google (versão inglês) -->
   <title>Blue View Tower | FG | Balneário Camboriú</title>
+
+  <!-- ALTERAR: Descrição para SEO/Google — versão em inglês -->
   <meta name="description" content="Blue View Tower - 172m, 50 floors, 1 apartment per floor on Av. Atlântica, Barra Sul. Oceanfront, Biophilic Sky Garden. FG Empreendimentos.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ALTERAR: Ícone do site (favicon) — arquivo: assets/f.avicon.png (caminho relativo: ../assets/) -->
   <link rel="icon" href="../assets/f.avicon.png">
+
   <meta name="robots" content="index, follow">
+
+  <!-- ALTERAR: Imagem do hero (pré-carregada para performance) — arquivo: assets/obra.webp -->
   <link rel="preload" as="image" href="/assets/obra.webp" type="image/webp">
   <link rel="preload" as="style" href="/style.css">
   <link rel="stylesheet" href="/style.css">
+
+  <!-- ALTERAR: ID do Google Analytics — substitua G-YF5QJES6KQ pelo ID da sua conta -->
+  <!-- Para desativar o rastreamento, remova os dois blocos <script> abaixo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF5QJES6KQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,18 +36,28 @@
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
+  <!-- ============================================================
+       HEADER — Cabeçalho fixo
+  ============================================================ -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
+
+      <!-- ALTERAR: Logo do header — arquivo: ../assets/LOGO BRANCA S.FUNDO.webp -->
       <a href="#hero" class="brand"><img src="../assets/LOGO BRANCA S.FUNDO.webp" style="width: 200px;" loading="eager" fetchpriority="high"></a>
+
+      <!-- ALTERAR: Texto de localização ao lado do logo -->
       <span class="header-location">BC · Praia Brava</span>
+
       <div class="header-right">
+        <!-- Seletor de idioma — EN está ativo nesta página -->
+        <!-- ALTERAR: Para adicionar um novo idioma, crie a pasta e duplique um bloco <a> abaixo -->
         <nav class="lang-switch" aria-label="Language selector">
           <button class="lang-toggle" aria-expanded="false" aria-haspopup="true">
             EN
             <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 3l4 4 4-4"/></svg>
           </button>
           <div class="lang-dropdown">
+            <!-- ALTERAR: URLs das versões em outros idiomas -->
             <a href="/" class="lang">PT</a>
             <a href="#" class="lang active">EN</a>
             <a href="/es/" class="lang">ES</a>
@@ -44,8 +67,13 @@
     </div>
   </header>
 
-  <!-- ============ 01 · HERO ============ -->
+  <!-- ============================================================
+       SEÇÃO 01 · HERO — Banner principal com imagem de fundo
+  ============================================================ -->
   <section class="hero" id="hero">
+
+    <!-- ALTERAR: Imagem de fundo do hero — arquivo: assets/obra.webp -->
+    <!-- Resolução recomendada: 1920×1080px ou maior. Formatos aceitos: .webp, .jpg -->
     <img
       src="/assets/obra.webp"
       class="hero-media"
@@ -57,9 +85,13 @@
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
+      <!-- ALTERAR: Título principal do hero (H1) — versão inglês -->
       <h1 class="hero-title">Your life between sky and sea at the most exclusive address in Balneário Camboriú</h1>
+
+      <!-- ALTERAR: Subtítulo com dados técnicos do empreendimento -->
       <p class="hero-sub">172m · 50 floors · 1 apt per floor · Barra Sul · Av. Atlântica <br>· Delivery Dec/2028</p>
 
+      <!-- ALTERAR: Lista de bullets do hero — para adicionar um item, duplique um <li> -->
       <ul class="hero-bullets">
         <li>Oceanfront — absolute exclusivity</li>
         <li>From 275 to 549 m² · 6 suites · up to 6 parking spots</li>
@@ -67,7 +99,9 @@
       </ul>
 
       <div class="hero-cta">
+        <!-- ALTERAR: Texto e destino do botão primário -->
         <a href="#contato" class="btn btn-primary">Receive the complete development book</a>
+        <!-- ALTERAR: Número do WhatsApp — formato: https://wa.me/[CÓDIGO DO PAÍS][DDD][NÚMERO] -->
         <a href="https://wa.me/5547991356151" class="btn btn-outline">Talk to a Specialist now</a>
       </div>
     </div>
@@ -75,11 +109,16 @@
     <span class="scroll-hint" aria-hidden="true"></span>
   </section>
 
-  <!-- ============ 02 · STATS ============ -->
+  <!-- ============================================================
+       SEÇÃO 02 · STATS — Estatísticas animadas
+  ============================================================ -->
   <section class="stats">
     <div class="container stats-grid">
+      <!-- ALTERAR: data-count = valor numérico final | data-suffix = sufixo -->
+      <!-- Para adicionar um novo número, duplique um bloco <div class="stat"> -->
       <div class="stat">
         <span class="stat-num" data-count="172" data-suffix="m">0</span>
+        <!-- ALTERAR: Rótulo abaixo do número -->
         <span class="stat-label">Height<br><small>The tallest tower in Barra Sul</small></span>
       </div>
       <div class="stat">
@@ -92,26 +131,47 @@
       </div>
     </div>
   </section>
-  <!-- ============ 09.5 · GALLERY ============ -->
+
+  <!-- ============================================================
+       SEÇÃO GALERIA — Carrossel de imagens do empreendimento
+  ============================================================ -->
   <section class="gallery section" id="galeria">
     <div class="container">
       <div class="section-header center">
+        <!-- ALTERAR: Título da seção de galeria -->
         <h2 class="section-title center">Property Gallery</h2>
       </div>
       <div class="carousel gallery-carousel" id="galleryCarousel">
         <div class="carousel-track">
-          
+          <!-- GALERIA: Cada <img> abaixo é um slide do carrossel -->
+          <!-- Para ADICIONAR uma foto: copie uma linha <img> e troque o src e o alt -->
+          <!-- Para REMOVER uma foto: apague a linha <img> correspondente -->
+          <!-- Para REORDENAR: mova as linhas na ordem desejada -->
+          <!-- Pasta das imagens: ../assets/imagens/ -->
+
+          <!-- ALTERAR: Foto 1 — ../assets/imagens/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp -->
           <img src="../assets/imagens/23_113_35_EMBASAMENTO_NOTURNO_FINAL.webp" alt="Night Base" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 2 — ../assets/imagens/23_113_34_FACHADA_DIURNA_INSERCAO_FINAL_V2.webp -->
           <img src="../assets/imagens/23_113_34_FACHADA_DIURNA_INSERCAO_FINAL_V2.webp" alt="Daytime Facade" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 3 — ../assets/imagens/23_113_04_EMBASAMENTO_ESQUINA_FINAL (1).webp -->
           <img src="../assets/imagens/23_113_04_EMBASAMENTO_ESQUINA_FINAL%20(1).webp" alt="Corner Base" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 4 — ../assets/imagens/23_113_05_FOTOMONTAGEM_FINAL.webp -->
           <img src="../assets/imagens/23_113_05_FOTOMONTAGEM_FINAL.webp" alt="Photomontage" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 5 — ../assets/imagens/23_113_23_HALL_ENTRADA_TERREO_FINAL.webp -->
           <img src="../assets/imagens/23_113_23_HALL_ENTRADA_TERREO_FINAL.webp" alt="Lobby" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 6 — ../assets/imagens/23_113_15_PISCINA_COBERTA_FINAL.webp -->
           <img src="../assets/imagens/23_113_15_PISCINA_COBERTA_FINAL.webp" alt="Covered Pool" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 7 — ../assets/imagens/23_113_11_FESTAS_FINAL.webp -->
           <img src="../assets/imagens/23_113_11_FESTAS_FINAL.webp" alt="Party Hall" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 8 — ../assets/imagens/23_113_16_ACADEMIA_FINAL.webp -->
           <img src="../assets/imagens/23_113_16_ACADEMIA_FINAL.webp" alt="Gym" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 9 — ../assets/imagens/23_113_21_JOGOS_R00.webp -->
           <img src="../assets/imagens/23_113_21_JOGOS_R00.webp" alt="Game Room" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 10 — ../assets/imagens/23_113_32_FACHADA_ADICIONAL_FINAL.webp -->
           <img src="../assets/imagens/23_113_32_FACHADA_ADICIONAL_FINAL.webp" alt="Additional Facade" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 11 — ../assets/imagens/23_113_01_FACHADA_FINAL (1).webp -->
           <img src="../assets/imagens/23_113_01_FACHADA_FINAL%20(1).webp" alt="Facade" loading="lazy" decoding="async">
+          <!-- ALTERAR: Foto 12 — ../assets/imagens/23_113_03_FACHADA_NOTURNA_FINAL.webp -->
           <img src="../assets/imagens/23_113_03_FACHADA_NOTURNA_FINAL.webp" alt="Night Facade" loading="lazy" decoding="async">
         </div>
         <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
@@ -120,26 +180,39 @@
       </div>
     </div>
   </section>
-  <!-- ============ 03 · URGENCY ============ -->
+
+  <!-- ============================================================
+       SEÇÃO 03 · URGENCY — Bloco de escassez / preço
+  ============================================================ -->
   <section class="urgency section">
     <div class="container urgency-inner">
+      <!-- ALTERAR: Título, texto e preço da seção de urgência -->
       <h2 class="section-title">Only 31 units — active launch phase. The best ones go first.</h2>
       <p class="urgency-lead">Opportunities of this magnitude don't repeat themselves, and the 31 units won't wait.</p>
+      <!-- ALTERAR: Preço inicial — substitua R$ 21,733,000 pelo valor atual -->
       <p class="urgency-values">Starting from <strong>R$ 21,733,000</strong> · zero table for investors · special conditions in this phase.</p>
+      <!-- ALTERAR: Número do WhatsApp no botão de urgência -->
       <a href="https://wa.me/5547991356151" class="btn btn-primary page-cta-anchor">Secure my unit - WhatsApp</a>
     </div>
   </section>
 
-  <!-- ============ 04 · LOCATION & LIFESTYLE ============ -->
+  <!-- ============================================================
+       SEÇÃO 04 · LOCATION & LIFESTYLE — Mapa + imagens
+  ============================================================ -->
   <section class="location section" id="localizacao">
     <div class="container split">
       <div class="split-media">
+        <!-- ALTERAR: URL do mapa incorporado do Google Maps -->
+        <!-- Para trocar: vá ao Google Maps > Compartilhar > Incorporar mapa e copie a URL do src -->
         <iframe
           class="map"
           src="https://www.google.com/maps?q=Av.+Atlantica,+Barra+Sul,+Balneario+Camboriu+SC&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Blue View Tower Location"></iframe>
+
+        <!-- ALTERAR: Lista de pontos de referência próximos -->
+        <!-- Para ADICIONAR: duplique um <li> | Para REMOVER: apague o <li> -->
         <ul class="map-points">
           <li>Beach <span>front</span></li>
           <li>Marina <span>2 min</span></li>
@@ -151,25 +224,33 @@
       </div>
 
       <div class="split-text">
+        <!-- ALTERAR: Eyebrow e título da seção de localização -->
         <span class="eyebrow">Location & Lifestyle</span>
         <h2 class="section-title">The address that defines who you are, before even opening the door.</h2>
+        <!-- ALTERAR: Texto descritivo do endereço -->
         <p>Av. Atlântica 5.320 · Barra Sul. 19m oceanfront, steps away from the Marina and Unipraias.</p>
 
         <div class="lifestyle-grid">
+          <!-- ALTERAR: Foto de lifestyle 1 — arquivo: ../assets/23_113_25_SUITE_MASTER_TIPO_R01.webp -->
           <img src="../assets/23_113_25_SUITE_MASTER_TIPO_R01.webp" loading="lazy" alt="Master suite">
+          <!-- ALTERAR: Foto de lifestyle 2 — arquivo: ../assets/23_113_26_BANHEIRO_MASTER_TIPO_FINAL (1).webp -->
           <img src="../assets/23_113_26_BANHEIRO_MASTER_TIPO_FINAL (1).webp" loading="lazy" alt="Master bathroom">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 05 · ABOUT ============ -->
+  <!-- ============================================================
+       SEÇÃO 05 · ABOUT — Render + cards
+  ============================================================ -->
   <section class="about section section-dark" id="sobre">
     <div class="container split reverse">
       <div class="split-media">
+        <!-- ALTERAR: Imagem render da fachada — arquivo: ../assets/23_113_04_EMBASAMENTO_ESQUINA_FINAL (1).webp -->
         <img class="about-render" src="../assets/23_113_04_EMBASAMENTO_ESQUINA_FINAL (1).webp" alt="Curved glass facade render" loading="lazy">
       </div>
       <div class="split-text">
+        <!-- ALTERAR: Eyebrow, título e parágrafos da seção "About" -->
         <span class="eyebrow">About the development</span>
         <h2 class="section-title">A disruptive project that redefines what it means to live at the highest standard.</h2>
         <p>Blue curved glass facade inspired by the ocean waves. A unique mirroring that integrates the tower with the Barra Sul landscape.</p>
@@ -177,29 +258,39 @@
       </div>
     </div>
 
+    <!-- Cards de destaque — Para ADICIONAR: duplique um <article class="info-card"> -->
+    <!-- Para REMOVER: apague o <article> correspondente -->
     <div class="container about-cards">
       <article class="info-card">
+        <!-- ALTERAR: Título e texto do card "Architecture" -->
         <h3>Architecture</h3>
         <p>Blue curved glass with exclusive mirroring that reflects the sea and the natural light of Barra Sul.</p>
       </article>
       <article class="info-card highlight">
         <span class="wow"></span>
+        <!-- ALTERAR: Título e texto do card destaque "Biophilic Sky Garden" -->
         <h3>Biophilic Sky Garden</h3>
         <p>5.25m ceiling height at the heart of the tower — vegetation, natural light and airflow. The first of its kind in BC.</p>
       </article>
       <article class="info-card">
+        <!-- ALTERAR: Título e texto do card "Sustainability" -->
         <h3>Sustainability</h3>
         <p>Water reuse systems · solar panels · LED lighting throughout the development.</p>
       </article>
     </div>
   </section>
 
-  <!-- ============ 06 · FEATURES ============ -->
+  <!-- ============================================================
+       SEÇÃO 06 · FEATURES — Grid de cards de características
+  ============================================================ -->
   <section class="features section" id="diferenciais">
     <div class="container">
+      <!-- ALTERAR: Eyebrow e título da seção de diferenciais -->
       <span class="eyebrow center">Features</span>
       <h2 class="section-title center">Every detail designed for life at the highest standard</h2>
 
+      <!-- Para ADICIONAR um diferencial: duplique um <article class="feature-card"> -->
+      <!-- Para REMOVER: apague o <article> correspondente -->
       <div class="feature-grid">
         <article class="feature-card">
           <h3>Exclusivity</h3>
@@ -246,6 +337,7 @@
           <p>Solar panels · water reuse · LED lighting.</p>
         </article>
         <article class="feature-card">
+          <!-- ALTERAR: Data de entrega -->
           <h3>Delivery</h3>
           <p>December 2028 · construction underway since Feb/2024 · active launch phase.</p>
         </article>
@@ -253,17 +345,23 @@
     </div>
   </section>
 
-  <!-- ============ 07 · CONSTRUCTION STATUS ============ -->
+  <!-- ============================================================
+       SEÇÃO 07 · CONSTRUCTION STATUS — Gráficos de progresso (donut)
+  ============================================================ -->
   <section class="status section section-dark" id="status">
     <div class="container">
       <div class="section-header center">
+        <!-- ALTERAR: Título da seção de status -->
         <h2 class="section-title">Construction stage</h2>
       </div>
+      <!-- Para ADICIONAR uma etapa: duplique um bloco <div class="progress-item"> -->
+      <!-- Para REMOVER: apague o bloco correspondente -->
       <div class="progress-grid">
         <div class="progress-item">
           <div class="donut-wrap">
             <svg viewBox="0 0 100 100" class="donut">
               <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <!-- ALTERAR: data-pct = percentual de conclusão (0 a 100) -->
               <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="100"/>
             </svg>
             <span class="donut-pct">100%</span>
@@ -274,6 +372,7 @@
           <div class="donut-wrap">
             <svg viewBox="0 0 100 100" class="donut">
               <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <!-- ALTERAR: Percentual da Estrutura -->
               <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="40"/>
             </svg>
             <span class="donut-pct">40%</span>
@@ -284,6 +383,7 @@
           <div class="donut-wrap">
             <svg viewBox="0 0 100 100" class="donut">
               <circle class="donut-bg" cx="50" cy="50" r="40"/>
+              <!-- ALTERAR: Percentual do Acabamento -->
               <circle class="donut-fill" cx="50" cy="50" r="40" data-pct="0"/>
             </svg>
             <span class="donut-pct">0%</span>
@@ -291,6 +391,7 @@
           <span class="progress-label">Finishing</span>
         </div>
       </div>
+      <!-- ALTERAR: Datas de início e entrega da obra -->
       <div class="progress-dates-global">
         <span><em>Start:</em> Feb/2024</span>
         <span><em>Delivery:</em> Dec/2028</span>
@@ -298,12 +399,17 @@
     </div>
   </section>
 
-  <!-- ============ 08 · LEISURE ============ -->
+  <!-- ============================================================
+       SEÇÃO 08 · LEISURE — Lista de itens + carrossel de fotos
+  ============================================================ -->
   <section class="lazer section" id="lazer">
     <div class="container">
+      <!-- ALTERAR: Eyebrow e título da seção de lazer -->
       <span class="eyebrow center">Leisure</span>
       <h2 class="section-title center">Four entire floors dedicated to your experience</h2>
 
+      <!-- ALTERAR: Lista de itens de lazer -->
+      <!-- Para ADICIONAR: duplique um <li> | Para REMOVER: apague o <li> -->
       <ul class="lazer-list">
         <li>Steam sauna</li>
         <li>Outdoor party space</li>
@@ -319,13 +425,21 @@
         <li>Games and entertainment space</li>
       </ul>
 
+      <!-- Carrossel de lazer — Para ADICIONAR: duplique uma linha <img> e troque src/alt -->
+      <!-- Para REMOVER: apague a linha <img> correspondente -->
       <div class="carousel" id="lazerCarousel">
         <div class="carousel-track">
+          <!-- ALTERAR: Foto de lazer 1 — ../assets/23_113_23_HALL_ENTRADA_TERREO_FINAL.webp -->
           <img src="../assets/23_113_23_HALL_ENTRADA_TERREO_FINAL.webp" loading="lazy" alt="Lobby - Ground Floor">
+          <!-- ALTERAR: Foto de lazer 2 — ../assets/23_113_16_ACADEMIA_FINAL.webp -->
           <img src="../assets/23_113_16_ACADEMIA_FINAL.webp" loading="lazy" alt="Gym">
+          <!-- ALTERAR: Foto de lazer 3 — ../assets/23_113_21_JOGOS_R00.webp -->
           <img src="../assets/23_113_21_JOGOS_R00.webp" loading="lazy" alt="Game Room">
+          <!-- ALTERAR: Foto de lazer 4 — ../assets/23_113_15_PISCINA_COBERTA_FINAL.webp -->
           <img src="../assets/23_113_15_PISCINA_COBERTA_FINAL.webp" loading="lazy" alt="Outdoor pool">
+          <!-- ALTERAR: Foto de lazer 5 — ../assets/23_113_11_FESTAS_FINAL.webp -->
           <img src="../assets/23_113_11_FESTAS_FINAL.webp" loading="lazy" alt="Party hall">
+          <!-- ALTERAR: Foto de lazer 6 — ../assets/23_113_26_BANHEIRO_MASTER_TIPO_FINAL (1).webp -->
           <img src="../assets/23_113_26_BANHEIRO_MASTER_TIPO_FINAL (1).webp" loading="lazy" alt="Master bathroom">
         </div>
         <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
@@ -335,16 +449,23 @@
     </div>
   </section>
 
-  <!-- ============ 09 · TYPOLOGIES & FLOOR PLANS ============ -->
+  <!-- ============================================================
+       SEÇÃO 09 · TYPOLOGIES & FLOOR PLANS — Cards de planta baixa
+  ============================================================ -->
   <section class="typologies section" id="plantas">
     <div class="container">
       <div class="section-header center">
+        <!-- ALTERAR: Título da seção de plantas -->
         <h2 class="section-title">Typologies & Floor Plans</h2>
       </div>
+      <!-- Para ADICIONAR uma tipologia: duplique um <article class="typo-card"> -->
+      <!-- Para REMOVER: apague o <article> correspondente -->
       <div class="typo-carousel">
         <div class="typo-track typo-grid">
 
+          <!-- TIPOLOGIA A — card aberto (planta visível) -->
           <article class="typo-card open">
+            <!-- ALTERAR: Rótulo, área, pavimentos, suítes, vagas e preço do Tipo A -->
             <span class="typo-tag">Type A · 13 units</span>
             <h3>324 m²</h3>
             <ul>
@@ -352,26 +473,33 @@
               <li>6 suites · 3 parking spots</li>
               <li>Starting from R$ 21,733,000</li>
             </ul>
+            <!-- ALTERAR: Imagem da planta Tipo A — arquivo: ../assets/PB_TIPO_A_OPCAO_02.webp -->
             <img src="../assets/PB_TIPO_A_OPCAO_02.webp" alt="Type A Floor Plan" class="plant-preview" loading="lazy">
           </article>
 
+          <!-- TIPOLOGIA B — card aberto (planta visível) -->
           <article class="typo-card open">
+            <!-- ALTERAR: Dados do Tipo B -->
             <span class="typo-tag">Type B · 14 units</span>
             <h3>275 m²<small>oceanfront</small></h3>
             <ul>
               <li>23rd to 37th floor</li>
               <li>6 suites · 3 parking spots</li>
             </ul>
+            <!-- ALTERAR: Imagem da planta Tipo B — arquivo: ../assets/PB_TIPO_B_OPCAO_01.webp -->
             <img src="../assets/PB_TIPO_B_OPCAO_01.webp" alt="Type B Floor Plan" class="plant-preview" loading="lazy">
           </article>
 
+          <!-- TIPOLOGIA DUPLEX — card bloqueado (planta via WhatsApp) -->
           <article class="typo-card locked">
+            <!-- ALTERAR: Dados do Duplex Penthouse -->
             <span class="typo-tag">Duplex · Penthouse</span>
             <h3>549 m²<small>private pool</small></h3>
             <ul>
               <li>Private spa</li>
               <li>Ultimate exclusivity</li>
             </ul>
+            <!-- ALTERAR: Número do WhatsApp para acesso à planta do Duplex -->
             <a href="https://wa.me/5547991356151" class="lock-overlay" aria-label="View floor plan via WhatsApp">
               <span class="lock-icon" aria-hidden="true"></span>
               <p>Access floor plan via WhatsApp</p>
@@ -383,47 +511,65 @@
         <button class="carousel-btn next typo-next" aria-label="Next">&#8250;</button>
       </div>
 
+      <!-- ALTERAR: Número do WhatsApp no botão de plantas -->
       <a href="https://wa.me/5547991356151" class="btn btn-primary center-btn">Receive all floor plans via WhatsApp →</a>
     </div>
   </section>
 
-  <!-- ============ 10 · IMMERSIVE VIDEO ============ -->
+  <!-- ============================================================
+       SEÇÃO 10 · IMMERSIVE VIDEO — Thumbnail + player de vídeo
+  ============================================================ -->
   <section class="video section section-dark" id="video">
     <div class="container">
+      <!-- ALTERAR: Eyebrow e título da seção de vídeo -->
       <span class="eyebrow center">Immersive video</span>
       <h2 class="section-title center">Fly over the life that awaits you</h2>
 
       <div class="video-player" id="videoPlayer">
+        <!-- ALTERAR: Imagem de capa (thumbnail) do vídeo — arquivo: assets/23_113_32_FACHADA_ADICIONAL_FINAL.webp -->
+        <!-- Ao clicar, o thumbnail é substituído pelo vídeo (configurado em /script.js) -->
         <img class="video-thumb" src="/assets/23_113_32_FACHADA_ADICIONAL_FINAL.webp" loading="lazy" alt="Blue View Tower Video">
         <button class="video-play" aria-label="Play video"></button>
+        <!-- ATENÇÃO: Os arquivos de vídeo são carregados via /script.js -->
+        <!-- ALTERAR OS VÍDEOS: abra script.js e procure por "altimetria-blueview-animacao02" -->
+        <!-- Arquivos: assets/altimetria-blueview-animacao02.webm e .mp4 -->
       </div>
     </div>
   </section>
 
-  <!-- ============ 11 · FG EMPREENDIMENTOS ============ -->
+  <!-- ============================================================
+       SEÇÃO 11 · FG EMPREENDIMENTOS — Portfólio da construtora
+  ============================================================ -->
   <section class="builder section" id="fg">
     <div class="container">
+      <!-- ALTERAR: Eyebrow, título e subtítulo da seção FG -->
       <span class="eyebrow center">FG Empreendimentos</span>
       <h2 class="section-title center">The developer behind this project has already proven they know how to build the exceptional.</h2>
       <p class="center builder-lead">Founded in 2003 · pioneer in high-end developments in BC · responsible for One Tower, the tallest residential skyscraper in Latin America.</p>
 
+      <!-- Carrossel de portfólio — Para ADICIONAR: duplique um bloco <figure> -->
+      <!-- Para REMOVER: apague o bloco <figure> correspondente -->
       <div class="portfolio-carousel-wrap">
         <button class="carousel-btn prev portfolio-prev" aria-label="Previous">&#8249;</button>
         <button class="carousel-btn next portfolio-next" aria-label="Next">&#8250;</button>
         <div class="carousel" id="portfolioCarousel">
           <div class="carousel-track">
+            <!-- ALTERAR: Foto e nome do projeto 1 — ../assets/one-tower-1.webp -->
             <figure class="portfolio-slide">
               <img src="../assets/one-tower-1.webp" alt="One Tower" loading="lazy">
               <figcaption>One Tower</figcaption>
             </figure>
+            <!-- ALTERAR: Foto e nome do projeto 2 — ../assets/Titanium-Tower-20.webp -->
             <figure class="portfolio-slide">
               <img src="../assets/Titanium-Tower-20.webp" alt="Titanium Tower" loading="lazy">
               <figcaption>Titanium Tower</figcaption>
             </figure>
+            <!-- ALTERAR: Foto e nome do projeto 3 — ../assets/infinity.webp -->
             <figure class="portfolio-slide">
               <img src="../assets/infinity.webp" alt="Infinity Coast" loading="lazy" style="object-position: top">
               <figcaption>Infinity Coast</figcaption>
             </figure>
+            <!-- ALTERAR: Foto e nome do projeto 4 — ../assets/blue-coast.webp -->
             <figure class="portfolio-slide">
               <img src="../assets/blue-coast.webp" alt="Blue Coast Tower" loading="lazy" decoding="async">
               <figcaption>Blue Coast Tower</figcaption>
@@ -433,6 +579,7 @@
         </div>
       </div>
 
+      <!-- ALTERAR: Estatísticas da construtora FG -->
       <div class="builder-stats">
         <div><span class="stat-num" data-count="2003">0</span><small>Founded in</small></div>
         <div><span class="stat-num" data-count="60" data-suffix="+">0</span><small>developments</small></div>
@@ -442,14 +589,20 @@
     </div>
   </section>
 
-  <!-- ============ 12 · INVESTOR ============ -->
+  <!-- ============================================================
+       SEÇÃO 12 · INVESTOR — Cards de argumento de investimento
+  ============================================================ -->
   <section class="investor section section-dark" id="investidor">
     <div class="container">
+      <!-- ALTERAR: Eyebrow e título da seção de investimento -->
       <span class="eyebrow center">Investment</span>
       <h2 class="section-title center">BC and Praia Brava, the most sought-after places to live and one of the smartest to invest.</h2>
 
+      <!-- Para ADICIONAR um card: duplique um <article class="investor-card"> -->
+      <!-- Para REMOVER: apague o <article> correspondente -->
       <div class="investor-grid">
         <article class="investor-card">
+          <!-- ALTERAR: Título e dados do card "Appreciation" -->
           <h3>Appreciation</h3>
           <p><strong>+127% in 10 years</strong> in BC*<br>Barra Sul: top appreciation zone.</p>
         </article>
@@ -464,21 +617,27 @@
       </div>
 
       <a href="#contato" class="btn btn-primary center-btn page-cta-anchor">Secure my unit</a>
+      <!-- ALTERAR: Nota de rodapé sobre a fonte dos dados -->
       <p class="footnote">*FipeZap/CRECI data — informational purposes.</p>
     </div>
   </section>
 
-  <!-- ============ 13 · CONTACT FORM ============ -->
+  <!-- ============================================================
+       SEÇÃO 13 · CONTACT FORM — Formulário de contato
+  ============================================================ -->
   <section class="final section section-dark" id="contato">
     <div class="container split">
       <div class="final-text">
+        <!-- ALTERAR: Eyebrow, título e texto da coluna esquerda -->
         <span class="eyebrow">Contact us</span>
         <h2 class="section-title">Your next step starts with a conversation.</h2>
         <p>Receive the complete presentation, floor plans, price list and the special conditions for this phase.</p>
+        <!-- ALTERAR: Imagem decorativa ao lado do formulário — ../assets/23_113_30_COZINHA_TIPO_FINAL.webp -->
         <img class="final-img" src="../assets/23_113_30_COZINHA_TIPO_FINAL.webp" loading="lazy" alt="Sea view">
       </div>
 
       <div class="final-form">
+        <!-- Formulário de lead — para integrar a um CRM, adicione action="URL" no <form> -->
         <form id="leadForm" novalidate>
           <div class="field">
             <label for="nome">Name *</label>
@@ -497,6 +656,7 @@
           </div>
           <div class="field optional">
             <label for="perfil">Profile</label>
+            <!-- ALTERAR: Opções do select de perfil -->
             <select id="perfil" name="perfil">
               <option value="">Select</option>
               <option value="morar">To live</option>
@@ -505,35 +665,55 @@
             </select>
           </div>
 
+          <!-- ALTERAR: Texto dos botões do formulário -->
           <button type="submit" class="btn btn-primary btn-block">I want the exclusive presentation</button>
+          <!-- ALTERAR: Número do WhatsApp no botão inline do formulário -->
           <a href="https://wa.me/5547991356151" class="btn btn-whatsapp-inline btn-block">Or message on WhatsApp →</a>
 
+          <!-- ALTERAR: Texto de aviso LGPD -->
           <p class="lgpd">Your data is protected under Brazilian Privacy Law (LGPD) — Law 13,709/18.</p>
+          <!-- ALTERAR: Mensagem de sucesso após o envio -->
           <p class="form-success" id="formSuccess" hidden>We received your information. Our specialist will be in touch soon.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ============================================================
+       FOOTER — Rodapé
+  ============================================================ -->
   <footer class="site-footer">
     <div class="container footer-inner">
+      <!-- ALTERAR: Logo do rodapé — arquivo: assets/LOGO BRANCA S.FUNDO.webp -->
       <img loading="lazy" src="/assets/LOGO BRANCA S.FUNDO.webp" style="width: 200px; margin: auto; margin-top: 5px;">
+      <!-- ALTERAR: Texto informativo do rodapé -->
       <p>FG Empreendimentos · BC Launches · CRECI/SC</p>
+      <!-- ALTERAR: URL exibida no rodapé (apenas texto visual) -->
       <p class="footer-url">blue-view.lancamentosbc.com</p>
     </div>
   </footer>
 
+  <!-- ============================================================
+       MODAL DE PLANTA — Abre ao clicar na imagem da Tipologia A
+  ============================================================ -->
+  <!-- ALTERAR: Imagem ampliada da planta no modal — ../assets/PB_TIPO_A_OPCAO_02.webp -->
   <div class="plant-modal" id="plantModal">
     <span class="close-modal">&times;</span>
     <img src="../assets/PB_TIPO_A_OPCAO_02.webp" alt="Floor plan enlarged" class="plant-modal-img" loading="lazy">
   </div>
 
-  <!-- Fixed mobile CTA -->
+  <!-- ============================================================
+       CTA FIXO MOBILE — Barra inferior que aparece ao rolar
+  ============================================================ -->
+  <!-- ALTERAR: Texto do botão fixo mobile -->
   <div class="mobile-cta-bar" aria-hidden="true">
     <a href="#contato" class="mobile-cta-btn mobile-cta-secondary">Secure my unit</a>
   </div>
 
+  <!-- ============================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+  ============================================================ -->
+  <!-- ALTERAR: Número do WhatsApp no botão flutuante -->
   <a href="https://wa.me/5547991356151" class="mobile-cta-wpp" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" fill="currentColor">
       <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.1 1 1.1-4-.3-.4C5.6 18.6 5 16.8 5 15 5 9.5 9.9 5 16 5s11 4.5 11 10-4.9 10-11 10zm6.1-7.5c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.8-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/>

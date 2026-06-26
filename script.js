@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await yieldToMain();
 
   /* ---------- Player de vídeo (thumbnail → vídeo) ---------- */
+  /* ALTERAR: Arquivos de vídeo abaixo — coloque os novos arquivos na pasta assets/ */
+  /* Formato preferido: .webm (melhor compressão). O .mp4 serve como fallback */
+  /* ALTERAR: src do <source> para trocar o vídeo imersivo */
   const player = document.getElementById('videoPlayer');
   if (player) {
     player.addEventListener('click', () => {

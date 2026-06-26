@@ -1289,6 +1289,9 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
 }
 
 /* ===== GALERIA ===== */
+.gallery section{
+  max-height: 100vh;
+}
 .gallery {
   content-visibility: auto;
   contain-intrinsic-size: 0 600px;
@@ -1316,6 +1319,10 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
 
 @media (max-width: 768px) {
   .gallery-carousel { height: 320px; }
+
+  /* Seções de conteúdo curto: sem forçar altura de tela */
+  .gallery.section,
+  .urgency.section { min-height: auto; }
 }
 
 @media (max-width: 480px) {

@@ -1320,9 +1320,25 @@ a.lock-overlay:hover { background: linear-gradient(180deg, rgba(27,58,75,.65), r
 @media (max-width: 768px) {
   .gallery-carousel { height: 320px; }
 
-  /* Seções de conteúdo curto: sem forçar altura de tela */
-  .gallery.section,
-  .urgency.section { min-height: auto; }
+  /* Scroll-snap: usuário sempre para no início de cada seção */
+  html { scroll-snap-type: y mandatory; }
+  .section, .stats, .hero { scroll-snap-align: start; }
+
+  /* Gap entre elementos da urgência */
+  .urgency-inner { display: flex; flex-direction: column; gap: 1rem; }
+  .urgency-values { margin: 0; }
+
+  /* Eyebrow da urgência fixo no topo da seção */
+  .urgency { position: relative; }
+  .urgency .eyebrow {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+
 }
 
 @media (max-width: 480px) {
